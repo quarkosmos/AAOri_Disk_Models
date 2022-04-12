@@ -1,0 +1,10 @@
+
+import aaoriradmc3dtool as rtool
+parm_table = "/Users/khkim/Work2/MyDiskModelPy/AAOri_emc/param_table.inp/param_table_TDs_20220330_low.txt"
+dirname = "/Users/khkim/Work2/MyDiskModelPy/AAOri_emc/rtmodels/TDs/"
+outputdir = "/Users/khkim/Work2/MyDiskModelPy/AAOri_emc/rtmodels/out_fig_csq/"
+pdfname = "figs_emcee_TDs_20220330_low"
+outtxt = "fitresults_emcee_TDs_low.txt"
+rtool.genProbParmInp(parm_table, dirname)
+rtool.batch_run_radmc3d(parm_table, dirname)
+rtool.genDefaultFigures(parm_table, dirname, outputdir, pdfname, outtxt)
